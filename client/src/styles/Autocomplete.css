@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* General Page Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background: url('../assets/background.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    color: #FFFFFF;
+}
+
+/* Logo */
+.autocomplete-container .logo img {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 150px;
+    height: auto;
+}
+
+/* Container */
+.autocomplete-container {
+    text-align: center;
+    margin-top: 90px;
+}
+
+h1 {
+    font-family: "Kanit", system-ui;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #29a3a9;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 5px;
+    margin-top: 0px
+}
+
+/* Search-wrapper for dropdown and search bar alignment */
+.search-wrapper {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* Search input and button */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    width: 550px;
+}
+
+/* Search input */
+.search-input {
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 30px;
+    width: 500px;
+    border: 2px solid #fffefe;
+    box-shadow: 0 0 15px rgb(0 0 0 / 63%);
+    outline: none;
+    margin-right: 10px;
+    z-index: 2;
+    margin-bottom: 0px;
+}
+
+.search-button {
+    border: none;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    border-radius:  50%; /* Perfectly round icon */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button img:hover {
+    box-shadow: 0 0 15px rgb(20, 154, 191);
+}
+
+.search-button img {
+    width: 35px; /* Same size as the button */
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Suggestions dropdown (attached to search bar) */
+.suggestions-dropdown {
+    position: absolute;
+    top: calc(100% - 16px); /* Positioned right below the search bar, slightly upwards */
+    width: 484px;
+    background-color: #c5c5c5;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 10.6px;
+    margin: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+}
+
+.suggestions-dropdown {
+    scrollbar-color: #29a3a9 #f1f1f1;
+    scrollbar-width: thin;
+}
+
+.suggestions-dropdown li {
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    width: calc(100% + 20px); /* Increase the width to account for the padding in the ul */
+    margin-left: -10px; /* Shift the li to the left to compensate for the ul's padding */
+    box-sizing: border-box;
+}
+
+.suggestions-dropdown li img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image is scaled properly inside the round border */
+}
+
+.suggestions-dropdown li .text-container {
+    display: flex;
+    flex-direction: column; /* Ensures name and job title are stacked vertically */
+    align-items: baseline
+}
+
+/* Name Styling - Burgundy and Bold */
+.suggestions-dropdown li .text-container p:nth-child(1) {
+    font-weight: bold;
+    color: #651414;
+    margin: 0 0 4px; /* Space between name and job title */
+    font-size: 1.1rem;
+}
+
+/* Work Title Styling - Black and Regular */
+.suggestions-dropdown li .text-container p:nth-child(2) {
+    color: #000000;
+    margin: 0;
+}
+
+/* Highlighted Text Styling */
+.highlighted {
+    background-color: yellow;
+}
+
+.suggestions-dropdown li:hover {
+    background-color: #d6d6d6;
+    cursor: default;
+}
+
+/* Full result list (detached from search bar) */
+.search-results {
+    margin-top: 50px; /* Adds space between search bar and result list */
+    background-color: #c5c5c5;
+    padding: 0.5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-results li {
+    padding: 10px;
+    display: flex;
+}
+
+.search-results li img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image is scaled properly inside the round border */
+}
+
+
+.search-results li .text-container {
+    display: flex;
+    flex-direction: column; /* Ensures name and job title are stacked vertically */
+    align-items: baseline
+}
+
+/* Name Styling - Burgundy and Bold */
+.search-results li .text-container p:nth-child(1) {
+    font-weight: bold;
+    color: #651414;
+    margin: 0 0 4px; /* Space between name and job title */
+    font-size: 1.1rem;
+}
+
+/* Work Title Styling - Black and Regular */
+.search-results li .text-container p:nth-child(2) {
+    color: #000000;
+    margin: 0;
+}
