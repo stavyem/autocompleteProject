@@ -55,8 +55,8 @@ Navigate into the server folder and install the dependencies:
 
 2. Start the Server
 
-Open another terminal to run the server from the server folder:
+After building the client, move back to the server folder and start the server:
 
-```cd server```
+```cd ../server```
 
 ```npm start```
